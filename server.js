@@ -17,10 +17,10 @@ app.get('/', function (req, res) {
     res.send('This is working');
 })
 
-app.get("/*", (req, res) => {
-    const context = { error: req.error };
-    return res.status(404).render("404", context);
-});
+// app.get("/*", (req, res) => {
+//     const context = { error: req.error };
+//     return res.status(404).render("404", context);
+// });
 
 app.listen(PORT, function() {
     console.log('Listening on PORT 4000');
