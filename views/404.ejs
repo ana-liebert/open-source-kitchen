@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- heading -->
+    <%- include ('./partials/head.ejs', {page: 'You messed up!'}) %>
+  
+    <!-- new nav bar -->
+    <%- include ('./partials/nav.ejs') %>
+  
+    <section class="hero is-medium has-background-light">
+      <div class="hero-body">
+				<img
+          width="300px"
+          src="https://media.giphy.com/media/xTiN0L7EW5trfOvEk0/giphy.gif"
+          alt="not found"
+        />
+        <p class="title">404 Not Found</p>
+        <% if (error) { %>
+        <p><%= error.message %></p>
+        <% } %>
+      </div>
+    </section>
+    <main class="container is-max-widescreen">
+      <div class="columns p-6">
+        <div class="column">
+          <a class="button is-info" href="/home">Back To Home Page</a>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
