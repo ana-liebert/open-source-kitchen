@@ -2,21 +2,26 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models')
 
+router.get('/home',(req, res) => {
+    res.render('test.ejs')
+})
 
-router.get('/home', async (req, res, next) => {
+// ---------------------------------------------------------------
+// router.get('/home', async (req, res, next) => {
     
-    try {
-        const recipes = await db.Recipe.find({});
-        const context = { recipes }
-        return res.render('home.ejs', context);
-    } catch (error) {
-        console.log(error);
-        req.error = error;
-        return next();
-    }
-});
+//     try {
+//         const recipes = await db.Recipe.find({});
+//         const context = { recipes }
+//         return res.render('home.ejs', context);
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// });
+// ^ needs recipe data in order to be accessed
 // ^ this defines route to home page listing all recipes
-
+//-----------------------------------------------------------------
 // router.post('/', async (req, res, next) => {
 
 //     try {
@@ -31,13 +36,12 @@ router.get('/home', async (req, res, next) => {
 //     }
 // })
 // ^ this defines route for creating and posing new recipes
-
+//------------------------------------------------------------------
 // router.get("/new", function(req, res) {
 //     res.render("post.ejs")
 // })
 // this will display form for new recipe entry
-
-
+//------------------------------------------------------------------
 // router.get('/:recipeId', async (req, res, next) => {
 //     try {
 //         const foundRecipe = await db.Recipe.findById(req.params.recipeId)
@@ -53,7 +57,7 @@ router.get('/home', async (req, res, next) => {
 // });
 // this route will catch GET requests to /recipes/index/ and respond with a single recipe
 
-
+//------------------------------------------------------------------
 // router.put('/:recipeId', async (req, res, next) => {
 
 //     try {
@@ -67,6 +71,7 @@ router.get('/home', async (req, res, next) => {
 //         return next();
 //     }
 // });
+//------------------------------------------------------------------
 
 module.exports = router;
 
