@@ -18,7 +18,21 @@ category.ejs
 router.get("/new", function(req, res) {
     res.render("post.ejs")
 })
-// this route will catch route to a form
+// this route will catch route to a form allowing user to post new recipe
+
+router.post('/', async (req, res, next) => {
+    try {
+        const createdRecipe = await db.Recipe.create(req.body)
+        console.log(createdRecipe);
+
+        res.redirect("/home");
+    } catch(error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+// this route will add createdRecipe to the req.body
 
 router.get('/:recipeId', async (req, res, next) => {
     try {
@@ -33,3 +47,5 @@ router.get('/:recipeId', async (req, res, next) => {
     }
 });
 // this route will catch GET requests to /recipe/index/ and respond with a single product
+
+
