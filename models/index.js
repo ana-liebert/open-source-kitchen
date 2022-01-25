@@ -1,5 +1,4 @@
-// require('../config/db.connection');
-// ^ awaiting name for this connection in config file
+require('../config/db.connection');
 
 module.exports = {
     // This is exporting my Product model
