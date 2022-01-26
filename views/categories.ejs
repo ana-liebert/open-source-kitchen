@@ -1,17 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+
+    <%- include ('./partials/head.ejs', {page: 'Recipe Blog'}) %>
+
+    <%- include ('./partials/nav.ejs') %>
+
 <body>
-    <h1>this is working</h1>
+    <body class="has-navbar-fixed-top">
+        <section class="hero is-medium has-background-light">
+            <div class="hero-body">
+                <p class="title">Recipe Blog</p>
+            </div>
+        </section>
+        <main class="container is-max-widescreen">
+            <div class="columns is-multiline p-5">
+                <% for(let idx = 0; idx < foundCategory.length; idx++){ %>
+
+                   
+            <div class="column is-three-quarters">
+
+                <article class="card">
+                    <section class="card-image">
+                        <figure class="image is-3by3">                   
+                        </figure>
+            </div>
+            </section>
+                            <div class="card-content">
+                                <div class="content">
+                                    <h3>
+                                    </h3>
+                                    <p><img src="<%= foundCategory[idx].image %>"/></p>
+                                    <p> <%= foundCategory[idx].description %> </p>
+                                    <p> <%= foundCategory[idx].title %> </p>
+                                
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                <% } %>
+            </div>
+        </main>
+    </body>
     
 </body>
 </html>
-
     
 
     

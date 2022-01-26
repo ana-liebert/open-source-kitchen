@@ -23,10 +23,14 @@ router.get('/home', async (req, res, next) => {
 
 router.get('/:recipeTitle', async (req, res, next) => {
     try {
-        const foundRecipe = await db.Recipe.find({title: [req.params.recipeTitle]})
-
+        const title = req.params.recipeTitle
+        const foundRecipe = await db.Recipe.findOne({title})
+        console.log([req.params.recipeTitle])
         console.log(foundRecipe);
-        const context = { recipe: foundRecipe }
+        const context = { foundRecipe }
+        console.log('========================================')
+        console.log(context);
+        console.log('========================================')
         res.render('recipe.ejs', context)
     } catch (error) {
         console.log(error);
@@ -38,13 +42,14 @@ router.get('/:recipeTitle', async (req, res, next) => {
 // ^ this route will catch GET requests to /recipeblog/:recipeTitle/ and respond with a single recipe
 //------------------------------------------------------------------
 
-router.get('/:category', async (req, res, next) => {
+router.get('/allrecipes/:category', async (req, res, next) => {
     try {
-        const foundRecipe = await db.Recipe.find({category: [req.params.category]})
+        const category = req.params.category
+        const foundCategory = await db.Recipe.find({category})
 
-        console.log(foundRecipe);
-        const context = { recipe: foundRecipe }
-        res.render('category.ejs', context)
+        console.log(foundCategory);
+        const context = { foundCategory }
+        res.render('categories.ejs', context)
     } catch (error) {
         console.log(error);
         req.error = error;
