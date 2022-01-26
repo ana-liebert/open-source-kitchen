@@ -38,6 +38,28 @@ router.get('/:recipeTitle', async (req, res, next) => {
 // ^ this route will catch GET requests to /recipeblog/:recipeTitle/ and respond with a single recipe
 //------------------------------------------------------------------
 
+router.get('/:category', async (req, res, next) => {
+    try {
+        const foundRecipe = await db.Recipe.find({category: [req.params.category]})
+
+        console.log(foundRecipe);
+        const context = { recipe: foundRecipe }
+        res.render('category.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
+// ^ not sure about foundRecipe being used for const here
+// ^ this route will catch GET requests to /recipeblog/:category/ and respond with all recipes in that category
+
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+
+
 // router.get("/new", function(req, res) {
 //     res.render("post.ejs")
 // })
