@@ -6,16 +6,18 @@
 
 <body>
 
-<h1 class="title"><%= recipes.title %></h1>
-<img class ="image" src="<%= recipes.image %>"/>
+<h1 class="title"><%= foundRecipe.title %></h1>
+<img class ="image" src="<%= foundRecipe.image %>"/>
 <div class="container">
     <div class="recipe" id="ingredients">
        <h3 class="title">Ingredients:</h3>
-       <p><%= recipes.ingredients%></p>
+       
     </div>
     <div class="recipe" id="prep">
         <h3 class="title">Preperation:</h3>
-        <p><%= recipes.recipe %></p>
+        <% for(let idx = 0; idx < foundRecipe.recipe.length; idx++){ %>
+        <p><%= foundRecipe.recipe[idx]%></p>
+        <%}%>
     </div>  
 </div>
 <div class="reviewContainer">
