@@ -5,10 +5,6 @@ const db = require('../models')
 // const db = require('../seed.js')
 // const { Recipe } = require('../seed.js');
 
-// router.get('/home', (req, res) => {
-//     res.send(Recipe.find({}))
-// })
-
 router.get('/home', async (req, res, next) => {
     
     try {
@@ -22,26 +18,53 @@ router.get('/home', async (req, res, next) => {
     }
 });
 
-// router.get('/home',(req, res) => {
-//     res.render('home.ejs')
-// })
-
+// ^ this route will catch GET requests tor recipeblog/home -- listing all recipes (index page)
 // ---------------------------------------------------------------
-// router.get('/home', async (req, res, next) => {
-    
-//     try {
-//         const recipes = await db.Recipe.find({});
-//         const context = { recipes }
-//         return res.render('home.ejs', context);
-//     } catch (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// });
-// ^ needs recipe data in order to be accessed
-// ^ this defines route to home page listing all recipes
-//-----------------------------------------------------------------
+
+router.get('/:recipeTitle', async (req, res, next) => {
+    try {
+        const foundRecipe = await db.Recipe.find({title: [req.params.recipeTitle]})
+
+        console.log(foundRecipe);
+        const context = { recipe: foundRecipe }
+        res.render('recipe.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
+// ^ this route will catch GET requests to /recipeblog/:recipeTitle/ and respond with a single recipe
+//------------------------------------------------------------------
+
+router.get('/:category', async (req, res, next) => {
+    try {
+        const foundRecipe = await db.Recipe.find({category: [req.params.category]})
+
+        console.log(foundRecipe);
+        const context = { recipe: foundRecipe }
+        res.render('category.ejs', context)
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
+
+// ^ not sure about foundRecipe being used for const here
+// ^ this route will catch GET requests to /recipeblog/:category/ and respond with all recipes in that category
+
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+
+
+// router.get("/new", function(req, res) {
+//     res.render("post.ejs")
+// })
+// this will display form for new recipe entry
+//------------------------------------------------------------------
 // router.post('/', async (req, res, next) => {
 
 //     try {
@@ -56,26 +79,11 @@ router.get('/home', async (req, res, next) => {
 //     }
 // })
 // ^ this defines route for creating and posing new recipes
-//------------------------------------------------------------------
-// router.get("/new", function(req, res) {
-//     res.render("post.ejs")
-// })
-// this will display form for new recipe entry
-//------------------------------------------------------------------
-// router.get('/:recipeId', async (req, res, next) => {
-//     try {
-//         const foundRecipe = await db.Recipe.findById(req.params.recipeId)
+//-----------------------------------------------------------------
 
-//         console.log(foundRecipe);
-//         const context = { recipe: foundRecipe }
-//         res.render('show.ejs', context)
-//     } catch (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// });
-// this route will catch GET requests to /recipes/index/ and respond with a single recipe
+//------------------------------------------------------------------
+
+
 
 //------------------------------------------------------------------
 // router.put('/:recipeId', async (req, res, next) => {
