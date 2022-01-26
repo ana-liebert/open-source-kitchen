@@ -2,23 +2,23 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models')
 
-router.get('/home',(req, res) => {
-    res.render('test.ejs')
-})
+// router.get('/home',(req, res) => {
+//     res.render('home.ejs')
+// })
 
 // ---------------------------------------------------------------
-// router.get('/home', async (req, res, next) => {
+router.get('/home', async (req, res, next) => {
     
-//     try {
-//         const recipes = await db.Recipe.find({});
-//         const context = { recipes }
-//         return res.render('home.ejs', context);
-//     } catch (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// });
+    try {
+        const recipes = await db.Recipe.find({});
+        const context = { recipes }
+        return res.render('home.ejs', context);
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
 // ^ needs recipe data in order to be accessed
 // ^ this defines route to home page listing all recipes
 //-----------------------------------------------------------------
