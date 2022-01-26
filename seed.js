@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-const { Recipe } = require('./models');
 
 
 mongoose.connect('mongodb://127.0.0.1:27017/cookingblog', () => {
     console.log('Mongo is connected')
 }, e => console.error(e)
 );
+
+const { Recipe } = require('./models');
 
 Recipe.deleteMany({}, (error, deletedProduct) => {
     if(error) console.log(error);
