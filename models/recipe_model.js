@@ -27,12 +27,12 @@ const recipeSchema = new mongoose.Schema({
         maxLength: 100,
     },
     ingredients: {
-        type: String,
+        type: [String],
         required: [true]
         // do I want to make this an array ot list of some sort?
     },
     recipe: {
-        type: String,
+        type: [String],
         required: [true]
     },
     image: {
