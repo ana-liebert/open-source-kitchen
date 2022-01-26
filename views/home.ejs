@@ -14,8 +14,8 @@
         </section>
         <main class="container is-max-widescreen">
             <div class="columns is-multiline p-5">
-                <% for(let idx = 0; idx <= recipes.length; idx++){ %>
-                    <% const recipe = recipes[idx] %>
+                <% for(let idx = 0; idx < recipes.length; idx++){ %>
+                   
             <div class="column is-one-third">
                 <article class="card">
                     <section class="card-image">
@@ -27,7 +27,10 @@
                                 <div class="content">
                                     <h3>
                                     </h3>
-                                    <p><%= recipe.description %></p>
+                                    <p><img src="<%= recipes[idx].image %>"/></p>
+                                    <p> <%= recipes[idx].description %> </p>
+                                    <p> <%= recipes[idx].title %> </p>
+                                    <p> <%= recipes[idx].ingredients %> </p>
                                 </div>
                             </div>
                         </article>
