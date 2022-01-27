@@ -10,7 +10,7 @@
     "nodemon": "^2.0.15"
   },
   "scripts": {
-    "devStart": "nodemon server.js"
+    "start": "node server.js"
   },
   "name": "project_2",
   "description": "Ana Najee Alan make a recipe blog",
