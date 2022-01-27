@@ -6,3 +6,4 @@ module.exports = {
     // This is exporting my Review model
     Review: require('./review_model'),
 }
+

@@ -1,10 +1,18 @@
+// const mongoose = require('mongoose');
+
+
+// mongoose.connect('mongodb://127.0.0.1:27017/cookingblog', () => {
+//     console.log('Mongo is connected')
+// }, e => console.error(e)
+// );
+
 const mongoose = require('mongoose');
+require('dotenv').config();
 
+const connectionStr = process.env.MONGO_URI;
 
-mongoose.connect('mongodb://127.0.0.1:27017/cookingblog', () => {
-    console.log('Mongo is connected')
-}, e => console.error(e)
-);
+mongoose.connect(connectionStr);
+
 
 const { Recipe } = require('./models');
 
