@@ -75,7 +75,7 @@ router.get('/:recipeTitle', async (req, res, next) => {
         console.log(foundRecipe);
         const context = { foundRecipe }
         console.log('========================================')
-        console.log(context);
+        // console.log(`THIS IS THE CONTEXT OF RECIPE PAGE ${context}`);
         console.log('========================================')
         res.render('recipe.ejs', context)
     } catch (error) {
@@ -106,18 +106,34 @@ router.delete('/:recipeTitle', async (req, res, next) => {
 // this method will delete recipe
 //------------------------------------------------------------------
 //-----------------------------------------------------------------
+// router.get('/:recipeTitle/edit', async (req, res, next) => {
+//     try {
+//         const updatedRecipe = await db.Recipe.findOne(req.params.recipeTitle);
+
+//         console.log(updatedRecipe);
+//         return res.render('edit.ejs', { updatedRecipe })
+//     } catch (error) {
+//         console.log(error);
+//         req.error = error;
+//         return next();
+//     }
+// })
+
 router.get('/:recipeTitle/edit', async (req, res, next) => {
     try {
-        const updatedRecipe = await db.Recipe.findOne(req.params.recipeTitle);
+        const title = req.params.recipeTitle
+        const foundRecipe = await db.Recipe.findOne({title: title});
 
-        console.log(updatedRecipe);
-        return res.render('edit.ejs', { updatedRecipe })
+        console.log(`THIS IS THE FOUND RECIPE FOR EDITING ${foundRecipe}`);
+        return res.render('edit.ejs', { foundRecipe: foundRecipe })
     } catch (error) {
         console.log(error);
         req.error = error;
         return next();
     }
 })
+
+
 // ^ this will require an edit.ejs form to take the info
 // ^ once it is created, I will change router.get 
 //------------------------------------------------------------------
@@ -126,12 +142,13 @@ router.get('/:recipeTitle/edit', async (req, res, next) => {
 router.put('/:recipeTitle', async (req, res, next) => {
 
     try {
-        // const title = req.params.recipeTitle
+        const title = {title: req.params.recipeTitle}
+        console.log(`THIS IS THE FILTER FOR THE TITLE ${title}`)
         // const updatedRecipe = await db.Recipe.findOneAndUpdate({title});
 
-        const updatedRecipe = await db.Recipe.findOneAndUpdate(req.params.recipeTitle);
-        
-        console.log(updatedRecipe);
+        const updatedRecipe = await db.Recipe.findOneAndUpdate(title, req.body);
+        //need to pass the req.body
+        console.log(`THIS IS THE EDITED RECIPE ${updatedRecipe}`);
         return res.redirect("/recipeblog/home");
     } catch (error) {
         console.log(error);

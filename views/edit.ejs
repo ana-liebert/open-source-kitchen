@@ -29,13 +29,37 @@
 
     <body class="form">
 
-        <form class="newRecipe" action="/recipeblog/home" method="POST">
-            <fieldset>
-                <legend>What are we cooking?</legend>
-                <label for="text">Title</label>
+        <form class="newRecipe" action="/recipeblog/<%= foundRecipe.title %>?_method=PUT" method="POST">
+            <div class="inputs">
+                <label class="label" for="text">Title</label>
                 <input name="title" type="text" id="text" placeholder="Creamy Potato Leek Soup with Dill">
-                <button type="submit">Submit</button>
-            </fieldset>
+            </div>
+            <div class="inputs">
+                <label class="label" for="text">Description</label>
+                <input name="description" type="text" id="text"
+                    placeholder="Whatever you do, don’t skip the dill. Nothing can replace the dill.">
+            </div>
+            <div class="inputs">
+                <label class="label" for="text">Author</label>
+                <input name="user" type="text" id="text" placeholder="Najee Simmons">
+            </div>
+            <div class="inputs">
+                <label class="label" for="text">Ingredients</label>
+                <input name="ingredients" type="text" id="text" placeholder="2 Tablespoons Olive Oil">
+            </div>
+            <div class="inputs">
+                <label class="label" for="text">Preperation</label>
+                <input name="recipe" type="text" id="text" placeholder="Heat the oven to 425 degrees">
+            </div>
+            <div class="inputs">
+                <label class="label" for="text">Image</label>
+                <input name="image" type="text" id="text" placeholder="https://">
+            </div>
+            <div class="inputs">
+                <label class="label" for="text">Category</label>
+                <input name="category" type="text" id="text" placeholder="breakfast">
+            </div>
+            <button type="submit">Submit</button>
         </form>
 
     </body>
