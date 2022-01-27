@@ -32,11 +32,23 @@
 
     <body>
 
-        <form>
+        <form action="/recipeblog/home" method="POST">
             <fieldset>
                 <legend>What are we cooking?</legend>
                 <label for="text">Title</label>
-                <input type="text" id="text" placeholder="<%= recipes[0].title %>">
+                <input name="title" type="text" id="text" placeholder="Chicken">
+                <label for="text">Description</label>
+                <input name="description" type="text" id="text" placeholder="This is good">
+                <label for="text">User</label>
+                <input name="user" type="text" id="text" placeholder="Ana">
+                <label for="text">Ingredients</label>
+                <input name="ingredients" type="text" id="text" placeholder="this and this and that">
+                <label for="text">Recipe</label>
+                <input name="recipe" type="text" id="text" placeholder="do this">
+                <label for="text">Image</label>
+                <input name="image" type="text" id="text" placeholder="image here">
+                <label for="text">Category</label>
+                <input name="category" type="text" id="text" placeholder="image here">
                 <button type="submit">Submit</button>
             </fieldset>
         </form>

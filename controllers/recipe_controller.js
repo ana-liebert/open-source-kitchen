@@ -21,13 +21,13 @@ router.get('/home', async (req, res, next) => {
 // ^ this route will catch GET requests tor recipeblog/home -- listing all recipes (index page)
 // ---------------------------------------------------------------
 //------------------------------------------------------------------
-router.post('/', async (req, res, next) => {
+router.post('/home', async (req, res, next) => {
 
     try {
         const createdRecipe = await db.Recipe.create(req.body)
         console.log(createdRecipe);
 
-        res.redirect("/recipeblog");
+        res.redirect("/recipeblog/home");
     } catch(error) {
         console.log(error);
         req.error = error;
@@ -37,7 +37,7 @@ router.post('/', async (req, res, next) => {
 // ^ this defines route for creating and posing new recipes
 
 router.get("/allrecipes/new", function(req, res) {
-    res.send("Hiya")
+    res.render("post.ejs")
 })
 
 // ^ this route will catch GET requests to /recipeblog/allrecipes/new
