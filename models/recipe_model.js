@@ -14,7 +14,6 @@ const recipeSchema = new mongoose.Schema({
     title: {
         type: String,
         required: [true],
-        maxLength: 40,
     },
     category: {
         type: String,
@@ -24,7 +23,6 @@ const recipeSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        maxLength: 100,
     },
     ingredients: {
         type: [String],
