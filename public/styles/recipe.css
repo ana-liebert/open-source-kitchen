@@ -8,7 +8,9 @@ body {
 }
 
 img {
-    max-block-size: 900px;
+    /* max-block-size: 1100px; */
+    object-fit: cover
+
 }
 
 #title {
