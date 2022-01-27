@@ -41,7 +41,7 @@ router.get("/allrecipes/new", function(req, res) {
 })
 
 // ^ this route will catch GET requests to /recipeblog/allrecipes/new
-// ^ will route to post.ejs
+// ^ will route to post.ejs new form
 //------------------------------------------------------------------
 //------------------------------------------------------------------
 
@@ -86,41 +86,59 @@ router.get('/:recipeTitle', async (req, res, next) => {
 //------------------------------------------------------------------
 //------------------------------------------------------------------
 
+router.delete('/:recipeTitle', async (req, res, next) => {
+    try {
+        const deletedRecipe = await db.Recipe.findByIdAndDelete(req.params.recipeTitle);
 
-// this will display form for new recipe entry
+        console.log(deletedRecipe);
+        res.redirect('/recipeblog/home');
+    } catch(error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
+// this method will delete recipe
 //------------------------------------------------------------------
-
 //-----------------------------------------------------------------
+router.get('/:recipeTitle/edit', async (req, res, next) => {
+    try {
+        const updatedRecipe = await db.Recipe.findOne(req.params.recipeTitle);
 
+        console.log(updatedRecipe);
+        return res.render('edit.ejs', { updatedRecipe })
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+// ^ this will require an edit.ejs form to take the info
+// ^ once it is created, I will change router.get 
+//------------------------------------------------------------------
 //------------------------------------------------------------------
 
+router.put('/:recipeTitle', async (req, res, next) => {
 
+    try {
+        // const title = req.params.recipeTitle
+        // const updatedRecipe = await db.Recipe.findOneAndUpdate({title});
+   
+        const updatedRecipe = await db.Recipe.findOneAndUpdate(req.params.recipeTitle);
+        
+        console.log(updatedRecipe);
+        return res.redirect("/recipeblog/home");
+    } catch (error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+});
 
 //------------------------------------------------------------------
-// router.put('/:recipeId', async (req, res, next) => {
-
-//     try {
-//         const updatedRecipe = await db.Recipe.findByIdAndUpdate(req.params.recipeId, req.body);
-
-//         console.log(updatedProduct);
-//         return res.redirect('/products');
-//     } catch (error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// });
 //------------------------------------------------------------------
 
 module.exports = router;
 
-/*
-/home
-homes.ejs
-/recipe/id
-recipe.ejs
-post
-post.ejs
-category/breakdast || lunch || dinner
-category.ejs
-*/
+

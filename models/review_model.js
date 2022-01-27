@@ -8,7 +8,6 @@ const reviewSchema = new mongoose.Schema({
         title: {
             type: String,
             required: [true],
-            maxLength: 40,
         },
         date: {
             type: Date,
@@ -24,7 +23,7 @@ const reviewSchema = new mongoose.Schema({
         comment: {
             type: String,
             required: [true],
-            maxLength: 120,
+            maxLength: 280,
             //How do you limit length of comment?
         },
         product: {
