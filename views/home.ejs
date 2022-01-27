@@ -7,7 +7,7 @@
 
 <body>
     <body class="has-navbar-fixed-top">
-        <section class="hero is-medium has-background-light">
+        <section class="hero is-small has-background-light">
             <div class="hero-body">
                 <p class="title">Recipe Blog</p>
             </div>
@@ -26,13 +26,17 @@
             </div>
             </section>
                             <div class="card-content">
-                                <div class="content">
-                                    <h3>
-                                    </h3>
-                                    <p><img src="<%= recipes[idx].image %>"/></p>
-                                    <p> <%= recipes[idx].description %> </p>
-                                    <p> <%= recipes[idx].title %> </p>
-                                    <p> <%= recipes[idx].ingredients %> </p>
+                                <div class="content is-inline-block">
+                                   
+                                    <div class="home-images">
+                                    <img src="<%= recipes[idx].image %>"/></div>
+                                    
+                                    <div class="recipe-description">
+                                        <%= recipes[idx].description %></div>
+                                    <div class=recipe-title>
+                                        <h2><%= recipes[idx].title %></h2></div>
+                                    <div class="recipe-ingredients">
+                                        <%= recipes[idx].ingredients %></div>
                                 </div>
                             </div>
                         </article>
