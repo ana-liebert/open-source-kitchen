@@ -36,6 +36,7 @@ router.post('/home', async (req, res, next) => {
 })
 // ^ this defines route for creating and posing new recipes
 
+
 router.get("/allrecipes/new", function(req, res) {
     res.render("post.ejs")
 })
@@ -44,6 +45,7 @@ router.get("/allrecipes/new", function(req, res) {
 // ^ will route to post.ejs new form
 //------------------------------------------------------------------
 //------------------------------------------------------------------
+
 
 router.get('/allrecipes/:category', async (req, res, next) => {
     try {
@@ -59,6 +61,7 @@ router.get('/allrecipes/:category', async (req, res, next) => {
         return next();
     }
 });
+
 
 // ^ this route will catch GET requests to /recipeblog/allrecipes/:category/ and respond with all recipes in that category
 //------------------------------------------------------------------
@@ -88,9 +91,10 @@ router.get('/:recipeTitle', async (req, res, next) => {
 
 router.delete('/:recipeTitle', async (req, res, next) => {
     try {
-        const deletedRecipe = await db.Recipe.findByIdAndDelete(req.params.recipeTitle);
+        const itemToDelete = req.params.recipeTitle
+        const deletedRecipe = await db.Recipe.findOneAndDelete({title: itemToDelete});
 
-        console.log(deletedRecipe);
+        console.log(`THIS DELETED THE RECIPE ${deletedRecipe}`);
         res.redirect('/recipeblog/home');
     } catch(error) {
         console.log(error);
@@ -124,7 +128,7 @@ router.put('/:recipeTitle', async (req, res, next) => {
     try {
         // const title = req.params.recipeTitle
         // const updatedRecipe = await db.Recipe.findOneAndUpdate({title});
-   
+
         const updatedRecipe = await db.Recipe.findOneAndUpdate(req.params.recipeTitle);
         
         console.log(updatedRecipe);
