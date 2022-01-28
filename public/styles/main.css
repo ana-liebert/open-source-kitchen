@@ -1,11 +1,16 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-image: url(https://www.gimmesomeoven.com/wp-content/themes/gimmesomeoven2019/images/bg.png);
+    /* padding: 5rem; */
 }
 
 img {
     max-block-size: 600px;
 }
+
+.category-content {
+    background-color: whitesmoke;
+} 
 
 .category-card {
     display: flex;
@@ -17,14 +22,20 @@ img {
     height: 450px;
 }
 
-/* .columns {
-    
+/* .main-container {
+    background-image: url(https://www.gimmesomeoven.com/wp-content/themes/gimmesomeoven2019/images/bg.png);
 } */
+
+.hero-body {
+    background-image: url(https://media.gettyimages.com/photos/spices-on-grey-background-picture-id1176564636?k=20&m=1176564636&s=612x612&w=0&h=5G9-Hf1nAK2Sm4RFMD6OlRyuuzBFYyLoFXNxnpCV57s=);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .home-images, .category-images {
     display: flex;
     justify-content: center;
-    background: white;
+    background-image: url(https://images.unsplash.com/photo-1601645055521-8a63c986f411?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cnVzdGljJTIwY2hyaXN0bWFzfGVufDB8fDB8fA%3D%3D&w=1000&q=80);
 }
 
 .recipe-description {
@@ -37,6 +48,7 @@ img {
     font-weight: bolder;
     text-decoration: underline;
     margin-top: 3rem;
+    color: black;
 }
 
 .recipe-title h2 {
@@ -46,4 +58,9 @@ img {
 
 .recipe-ingredients {
     font-size: 13px;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    color: whitesmoke;
 }
