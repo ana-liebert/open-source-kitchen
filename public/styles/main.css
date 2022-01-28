@@ -48,12 +48,13 @@ img {
     font-weight: bolder;
     text-decoration: underline;
     margin-top: 3rem;
-    color: black;
+    color: rgb(255, 94, 0);
 }
 
 .recipe-title h2 {
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: rgb(255, 94, 0);
 }
 
 .recipe-ingredients {
