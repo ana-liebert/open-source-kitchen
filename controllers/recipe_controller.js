@@ -74,7 +74,7 @@ router.get('/:recipeTitle', async (req, res, next) => {
         console.log([req.params.recipeTitle])
         console.log(foundRecipe);
         const allReviews = await db.Review.find({})
-        const context = { foundRecipe }
+        const context = { foundRecipe, allReviews }
         console.log('========================================')
         // console.log(`THIS IS THE CONTEXT OF RECIPE PAGE ${context}`);
         console.log('========================================')

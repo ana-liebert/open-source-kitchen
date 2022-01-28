@@ -18,16 +18,14 @@ router.post('/home', async (req, res, next) => {
 // ^ this defines method for creating and posing new recipes
 
 
-router.get("/allrecipes/new", function(req, res) {
-    res.render("post.ejs")
+router.get("/:id", function(req, res) {
+    res.render('review.ejs')
 })
-// ^ post.ejs needs to be replaced with route to review form
-// ^ this route will catch GET requests to /recipeblog/allrecipes/new
-// ^ will route to post.ejs new form
+// ^ this will display review form
 //------------------------------------------------------------------
 //------------------------------------------------------------------
 
-router.get('/:id/reviews', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
     try {
         const id = req.params.id
         const foundReviews = await db.Review.find({ObjectId: id})
@@ -37,7 +35,7 @@ router.get('/:id/reviews', async (req, res, next) => {
         console.log('========================================')
         // console.log(`THIS IS THE CONTEXT OF RECIPE PAGE ${context}`);
         console.log('========================================')
-        res.render('recipe.ejs', context)
+        res.render('review.ejs', context)
     } catch (error) {
         console.log(error);
         req.error = error;
@@ -45,7 +43,8 @@ router.get('/:id/reviews', async (req, res, next) => {
     }
 });
 
-/* ^ this route will catch GET requests to /recipeblog/:recipeTitle/reviews
+/* ^ this route will catch GET requests to :id
  and respond with all reviews for a single recipe */
 //------------------------------------------------------------------
 //------------------------------------------------------------------
+module.exports = router;
