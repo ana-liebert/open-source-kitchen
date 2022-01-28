@@ -313,6 +313,23 @@ Recipe.deleteMany({}, (error, deletedProduct) => {
                 ],
                 image: "https://minimalistbaker.com/wp-content/uploads/2021/06/DREAMY-Peaches-n-Cream-Overnight-Oats-Creamy-sweet-and-SO-easy-to-make-Perfect-for-breakfast-or-a-snack.-minimalistbaker-recipe-plantbased-glutenfree-oats-peaches-5.jpg"
             },
+            {   user: "Ana Liebert",
+            title: "Vegan Chorizo Breakfast Tacos",
+            category: "breakfast",
+            description: "Tender roasted potatoes, flavorful plant-based chorizo, sweet and spicy salsa, and creamy avocado combine for an explosion of flavors and textures wrapped in warm corn tortillas.",
+            ingredients: [
+                "1 lb yellow or red potatoes, chopped into even ~1/4 – 3/8-inch pieces",
+                "1 Tbsp avocado oil (or olive oil)",
+                "1/2 tsp sea salt",
+                "1 batch Easy Vegan Chorizo (or Vegan Chorizo Links // or store-bought such as El Burrito Soyrizo)",
+            ],
+            recipe: [
+                "1. POTATOES: Preheat oven to 425 F (218 C) and line a large baking sheet with parchment paper. Add chopped potatoes (~1/4 – 3/8-inch thick) to the baking sheet and drizzle with avocado oil. Then add salt and toss well to combine. Roast until golden brown and crispy, or about 20-25 minutes. You'll know they're done when they’re golden brown on the bottom and edges and tender in the center.",
+                "2. CHORIZO: Prepare Easy Vegan Chorizo mixture while the potatoes are cooking. You can also use store-bought such as Soyrizo or leftover Vegan Chorizo Links (if using links, break them up into a crumble texture before cooking). To cook the chorizo (any of the options), heat a 10-inch nonstick or well-seasoned cast iron skillet over medium heat. Add 1 Tbsp (15 ml) avocado oil and place half of the chorizo into the skillet. Distribute evenly over the pan so it’s in one thin layer. Cook for 3-4 minutes, undisturbed. It should be sizzling and popping slightly — if it’s not, turn up the heat a bit. Repeat with the remaining chorizo.",
+                "1. SALSA: Optionally, prepare Mango Salsa. Otherwise, use any store-bought salsa you enjoy. Other delicious homemade options include our Easy Red Salsa, Chipotle Red Salsa, or Roasted Salsa Verde.",
+            ],
+            image: "https://minimalistbaker.com/wp-content/uploads/2021/08/30-MINUTE-Breakfast-Tacos-with-Vegan-Chorizo-Fresh-flavor-packed-easy-to-make-and-perfect-for-meal-prep-minimalistbaker-recipe-plantbased-glutenfree-tacos-breakfast-7-1365x2048.jpg"
+        },
         ],
         function (error, createdProduct) {
             if (error) {
