@@ -28,40 +28,61 @@
 <%- include ('./partials/nav.ejs') %>
 
     <body class="form">
+        <h1>Fill out the fields to update this recipe</h1>
+        <div class="formContainer">
 
         <form class="newRecipe" action="/recipeblog/<%= foundRecipe.title %>?_method=PUT" method="POST">
-            <div class="inputs">
-                <label class="label" for="text">Title</label>
-                <input name="title" type="text" id="text" placeholder="Creamy Potato Leek Soup with Dill">
-            </div>
-            <div class="inputs">
-                <label class="label" for="text">Description</label>
-                <input name="description" type="text" id="text"
-                    placeholder="Whatever you do, don’t skip the dill. Nothing can replace the dill.">
-            </div>
-            <div class="inputs">
-                <label class="label" for="text">Author</label>
-                <input name="user" type="text" id="text" placeholder="Najee Simmons">
-            </div>
-            <div class="inputs">
-                <label class="label" for="text">Ingredients</label>
-                <input name="ingredients" type="text" id="text" placeholder="2 Tablespoons Olive Oil">
-            </div>
-            <div class="inputs">
-                <label class="label" for="text">Preperation</label>
-                <input name="recipe" type="text" id="text" placeholder="Heat the oven to 425 degrees">
-            </div>
-            <div class="inputs">
-                <label class="label" for="text">Image</label>
-                <input name="image" type="text" id="text" placeholder="https://">
-            </div>
-            <div class="inputs">
-                <label class="label" for="text">Category</label>
-                <input name="category" type="text" id="text" placeholder="breakfast">
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+            <fieldset>
+                <legend></legend>
+                <div class="inputs">
+                    <label class="label" for="text">Title</label>
+                    <input name="title" type="text" id="text" value="<%= foundRecipe.title %>">
+                </div>
+                <input name="image" type="image" id="formImage" alt="Login" src="<%= foundRecipe.image %>">
+                <div class="inputs">
+                    <label class="label" for="text">Image</label>
+                    <input name="image" type="text" id="text" value="<%= foundRecipe.image %>">
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Description</label>
+                    <input name="description" type="text" id="text"
+                    value="<%= foundRecipe.description %>">
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Author</label>
+                    <input name="user" type="text" id="text" value="<%= foundRecipe.user%>">
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Ingredients</label>
+                    <input name="ingredients" type="text" id="formIngredients" value="
+                    <% for(let idx=0; idx < foundRecipe.ingredients.length; idx++){ %>
 
+                    <%= foundRecipe.ingredients[idx]%>
+                            <%}%> ">
+                </div>
+                
+
+                
+                
+
+
+                <!-- <div class="inputs">
+                    <label class="label" for="text">Ingredients</label>
+                    <textarea name="ingredients" type="text" id="ingredients" value="can i have a value here?" id="textarea-1"></textarea>
+                </div> -->
+                <div class="inputs">
+                    <label class="label" for="text">Preperation</label>
+                    <textarea name="recipe" type="text" id="prep" placeholder="Heat the oven to 425 degrees" id="textarea-1"></textarea>
+                    
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Category</label>
+                    <input name="category" type="text" id="text" value="<%= foundRecipe.category%>">
+                </div>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+</div>
     </body>
 
 </html>

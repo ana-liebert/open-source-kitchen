@@ -50,111 +50,33 @@ font-size: 45px;
 
 .reviewContainer {
     margin-top: 25px;
-}
-
-#ingredientsList {
-    list-style-type: circle;
-}
-
-#prepList {
-    list-style-type: none;
-    padding: 10px;
-}
-
-#steps {
-    margin-top: 2px;
-    margin: 20px;
-}
-
-
-=====================
-
-body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-weight: bolder;
-}
-
-img {
-    /* max-block-size: 1100px; */
-    object-fit: cover
-
-}
-
-#title {
-font-size: 45px;
-margin: 30px;
-}
-
-.title, .description {
-    text-align: center;
-    color: rgb(255, 94, 0);
-}
-
-.container {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    text-align: center;
-    width: 1000px;
-    margin: 20px;
-    
-}
-
-#ingredients {
-    width: 250px;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: start;
-    padding: 10px;
-    margin-left: 50px; 
-    
-    
-}
-
-#prep {
-    margin-left: 50px; 
-    width: 700px;  
-    
-}
-
-
-.reviewContainer {
-    margin-top: 25px;
-}
-
-#ingredientsList {
-    list-style-type: circle;
-}
-
-#prepList {
-    list-style-type: none;
-    padding: 10px;
-}
-
-#steps {
-    margin-top: 2px;
-    margin: 20px;
-}
-
-.form {
-    background-color: blue;
-}
-
-.reviewContainer {
-    font-size: 18px;
     border: solid;
-    padding: 40px;
-    width: 700px;
-    margin: 20px;
     border-color: rgb(255, 94, 0);
+    padding: 75px;
 }
 
-#text, #number {
-    width: 500px;
-    display: flex;
-    justify-content: flex-end;
+#ingredientsList {
+    list-style-type: circle;
+}
+
+#prepList {
+    list-style-type: none;
+    padding: 10px;
+}
+
+#steps {
+    margin-top: 2px;
+    margin: 20px;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    background-color: rgb(247, 227, 216);
+    width: 80px;
+    display: inline-block;
+}
+
+.buttons {
+    display: inline-block;
 }
