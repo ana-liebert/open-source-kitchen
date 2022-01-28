@@ -53,10 +53,23 @@ margin: 20px;
     margin: 25px;
     border: solid 1px;
     border-color: rgb(255, 94, 0);
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 10px;
+    padding-right: 0px;
     padding-top: 20px;
     padding-bottom: 20px;
+    display: flex;
+    justify-content: start;
+    width: 600px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.reviewInput {
+    width: 500px;
+    height: 30px;
+    padding-right: 0px;
+    display: flex;
+    justify-content: stretch;
+    font-family: 'Poppins', sans-serif;
 }
 
 #ingredientsList {
