@@ -26,7 +26,7 @@ const reviewSchema = new mongoose.Schema({
             maxLength: 280,
             //How do you limit length of comment?
         },
-        receipe: {
+        recipe: {
             type: mongoose.Types.ObjectId,
             ref: "Recipe",
             // relationship to 'Recipe'

@@ -2,11 +2,36 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models')
 
-router.get('/:recipeTitle/reviews', async (req, res, next) => {
+router.post('/home', async (req, res, next) => {
+
     try {
-        const title = req.params.recipeTitle
-        const foundReviews = await db.Review.find('title: {title}')
-        console.log([req.params.recipeTitle])
+        const createdReview = await db.Review.create(req.body)
+        console.log(createdReview);
+
+        res.redirect("/recipeblog/home");
+    } catch(error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+// ^ this defines method for creating and posing new recipes
+
+
+router.get("/allrecipes/new", function(req, res) {
+    res.render("post.ejs")
+})
+// ^ post.ejs needs to be replaced with route to review form
+// ^ this route will catch GET requests to /recipeblog/allrecipes/new
+// ^ will route to post.ejs new form
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+
+router.get('/:id/reviews', async (req, res, next) => {
+    try {
+        const id = req.params.id
+        const foundReviews = await db.Review.find({ObjectId: id})
+        console.log([req.params.id])
         console.log(foundReviews);
         const context = { foundReviews }
         console.log('========================================')
