@@ -50,7 +50,7 @@ margin: 20px;
 }
 
 
-.reviewContainer {
+.reviewContainer, .seededReviewContainer {
     margin: 25px;
     border: solid 1px;
     border-color: rgb(255, 94, 0);
@@ -62,6 +62,7 @@ margin: 20px;
     justify-content: start;
     width: 600px;
     font-family: 'Poppins', sans-serif;
+    display: block;
 }
 
 .reviewInput {
