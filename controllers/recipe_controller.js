@@ -34,7 +34,7 @@ router.post('/home', async (req, res, next) => {
         return next();
     }
 })
-// ^ this defines route for creating and posing new recipes
+// ^ this defines method for creating and posing new recipes
 
 
 router.get("/allrecipes/new", function(req, res) {
@@ -73,7 +73,8 @@ router.get('/:recipeTitle', async (req, res, next) => {
         const foundRecipe = await db.Recipe.findOne({title})
         console.log([req.params.recipeTitle])
         console.log(foundRecipe);
-        const context = { foundRecipe }
+        const allReviews = await db.Review.find({})
+        const context = { foundRecipe, allReviews }
         console.log('========================================')
         // console.log(`THIS IS THE CONTEXT OF RECIPE PAGE ${context}`);
         console.log('========================================')

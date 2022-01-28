@@ -9,7 +9,7 @@
     <body class="has-navbar-fixed-top">
         <section class="hero is-small has-background-light">
             <div class="hero-body">
-                <p class="title">Recipe Blog</p>
+                <div class="title">Recipe Blog</div>
             </div>
         </section>
         <main class="container is-max-widescreen">
@@ -32,9 +32,16 @@
                                     <img src="<%= foundCategory[idx].image %>"/></div>
 
                                     <div class="recipe-description">
-                                        <%= foundCategory[idx].description %></div>
+                                        <%= foundCategory[idx].description %>
+                                    </div>
+                                        
+                                    <a href="/recipeblog/<%= foundCategory[idx].title %>">
                                     <div class=recipe-title>
-                                        <h2><%= foundCategory[idx].title %></h2></div>
+                                       
+                                        <h2><%= foundCategory[idx].title %></h2>
+                                    
+                                    </div>
+                                </a>
                                 
                                 </div>
                             </div>

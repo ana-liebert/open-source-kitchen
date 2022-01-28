@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Poiret+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+        </style>
+
+    <link rel="stylesheet" href="../styles/recipe.css" />
+
+    <script src="/scripts/bulma.js" defer></script>
+    <script src="/scripts/main.js" defer></script>
+
+   
+</head>
+
+
+
+<body>
+    <div class="reviewContainer">
+        
+            <fieldset>
+                <legend>Have you cooked this recipe? </legend>
+                <span>Leave a review and let us know what you think!</span>
+                <div><label for="text">User</label>
+                <input name="user" class="reviewInput" type="text" id="text" placeholder="Your name">
+                </div>
+                <div>
+                <label for="text">Headline</label>
+                <input name="title" class="reviewInput" type="text" id="text">
+                </div>
+                <div>
+                    <label for="text">Rating</label>
+                    <input name="rating" class="reviewInput" type="number" id="number" placeholder="1-5">
+                </div>
+                <div>
+                    <label for="text">Comment</label>
+                    <input name="comment" class="reviewInput" type="text" id="text">
+                </div>
+                <button class="submit" type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
