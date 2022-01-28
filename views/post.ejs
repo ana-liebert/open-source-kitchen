@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+
+
+    <link rel="stylesheet" href="/styles/post.css" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-        </style>
+    </style>
 
-    <link rel="stylesheet" href="/styles/post.css" />
 
     <script src="/scripts/bulma.js" defer></script>
     <script src="/scripts/main.js" defer></script>
@@ -27,28 +30,46 @@
 
 <%- include ('./partials/nav.ejs') %>
 
-    <body class="form">
-
+    <body>
+        <h1>Contribute your own recipe to Open Source Kitchen!</h1>
+        <div class="formContainer"> 
         <form class="newRecipe" action="/recipeblog/home" method="POST">
             <fieldset>
                 <legend>What are we cooking?</legend>
-                <label for="text">Title</label>
-                <input name="title" type="text" id="text" placeholder="Creamy Potato Leek Soup with Dill">
-                <label for="text">Description</label>
-                <input name="description" type="text" id="text" placeholder="Whatever you do, don’t skip the dill. Nothing can replace the dill.">
-                <label for="text">Author</label>
-                <input name="user" type="text" id="text" placeholder="Najee Simmons">
-                <label for="text">Ingredients</label>
-                <input name="ingredients" type="text" id="text" placeholder="2 Tablespoons Olive Oil">
-                <label for="text">Preperation</label>
-                <input name="recipe" type="text" id="text" placeholder="Heat the oven to 425 degrees">
-                <label for="text">Image</label>
-                <input name="image" type="text" id="text" placeholder="https://">
-                <label for="text">Category</label>
-                <input name="category" type="text" id="text" placeholder="breakfast">
+                <div class="inputs">
+                    <label class="label" for="text">Title</label>
+                    <input name="title" type="text" id="text" placeholder="Creamy Potato Leek Soup with Dill">
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Description</label>
+                    <input name="description" type="text" id="text"
+                        placeholder="Whatever you do, don’t skip the dill. Nothing can replace the dill.">
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Author</label>
+                    <input name="user" type="text" id="text" placeholder="Najee Simmons">
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Ingredients</label>
+                    <textarea name="ingredients" type="text" id="ingredients" placeholder="2 Tablespoons Olive Oil" id="textarea-1"></textarea>
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Preperation</label>
+                    <textarea name="recipe" type="text" id="prep" placeholder="Heat the oven to 425 degrees" id="textarea-1"></textarea>
+                    
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Image</label>
+                    <input name="image" type="text" id="text" placeholder="https://">
+                </div>
+                <div class="inputs">
+                    <label class="label" for="text">Category</label>
+                    <input name="category" type="text" id="text" placeholder="breakfast">
+                </div>
                 <button type="submit">Submit</button>
             </fieldset>
         </form>
+        </div>
 
     </body>
 
