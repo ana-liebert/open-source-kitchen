@@ -13,6 +13,7 @@ img {
 
 #title {
 font-size: 45px;
+margin: 20px;
 }
 
 .title, .description {
@@ -49,10 +50,13 @@ font-size: 45px;
 
 
 .reviewContainer {
-    margin-top: 25px;
-    border: solid;
+    margin: 25px;
+    border: solid 1px;
     border-color: rgb(255, 94, 0);
-    padding: 75px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #ingredientsList {
@@ -72,11 +76,13 @@ font-size: 45px;
 button {
     font-family: 'Poppins', sans-serif;
     padding: 10px;
-    background-color: rgb(247, 227, 216);
+    background-color: white;
     width: 80px;
     display: inline-block;
+    margin: 15px;
 }
 
 .buttons {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
 }

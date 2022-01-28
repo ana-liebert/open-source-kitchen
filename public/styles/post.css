@@ -59,7 +59,9 @@ input, #ingredients, #prep {
 }
 
 button {
+    margin: 15px;
     font-family: 'Poppins', sans-serif;
     padding: 10px;
-    background-color: rgb(247, 227, 216);
+    background-color: white;
+    width: 100px;
 }
