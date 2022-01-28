@@ -63,11 +63,11 @@
             </div>
         </div>
 
+        <div class="buttons">
         <form action="/recipeblog/<%= foundRecipe.title%>?_method=DELETE" method="POST">
             <button>Delete</button>
         </form>
         
-        <div>
             <button><a href="/recipeblog/<%= foundRecipe.title%>/edit">Edit</a></button>
         </div>
 
@@ -77,19 +77,19 @@
                     <legend>Have you cooked this recipe? </legend>
                     <span>Leave a review and let us know what you think!</span>
                     <div><label for="text">User</label>
-                    <input name="user" type="text" id="text" placeholder="Your name">
+                    <input name="user" class="reviewInput" type="text" id="text" placeholder="Your name">
                     </div>
                     <div>
                     <label for="text">Headline</label>
-                    <input name="title" type="text" id="text">
+                    <input name="title" class="reviewInput" type="text" id="text">
                     </div>
                     <div>
                         <label for="text">Rating</label>
-                        <input name="rating" type="number" id="number" placeholder="1-5">
+                        <input name="rating" class="reviewInput" type="number" id="number" placeholder="1-5">
                     </div>
                     <div>
                         <label for="text">Comment</label>
-                        <input name="comment" type="text" id="text">
+                        <input name="comment" class="reviewInput" type="text" id="text">
                     </div>
                     <button class="submit" type="submit">Submit</button>
                 </fieldset>

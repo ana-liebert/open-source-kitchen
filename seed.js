@@ -21,6 +21,34 @@ Recipe.deleteMany({}, (error, deletedProduct) => {
     Recipe.insertMany(
         [
             {
+                user: "Najee Simmons",
+                title: "Whole Fish With Soy and Citrus",
+                category: "dinner",
+                description: "For those curious about cooking a whole fish but nervous to try, this skillet method is as simple as cooking a chicken breast.",
+                ingredients: [
+                    "1 lemon",
+                    "1 lime plus 2 tablespoons fresh lime juice",
+                    "1 orange",
+                    "1 red snapper (about 2 1/2 pounds), gutted and scaled (optional to keep the head on)",
+                    "Kosher salt and black pepper",
+                    "2 tablespoons canola oil",
+                    "4 tablespoons unsalted butter",
+                    "2 tablespoons low-sodium soy sauce or tamari",
+                    "Flaky sea salt",
+                    "½ bunch cilantro or parsley, plus more if you like, for serving",
+                ],
+                recipe: [
+                    "Heat oven to 425 degrees. Thinly slice half the lemon, half the lime and half the orange.",
+                    "Using a sharp paring knife, make 2 to 3 1/2-inch-deep diagonal incisions on each side of the fish, not quite down to the bone, but enough to visibly score the flesh. Season fish inside and out with salt and pepper.",
+                    "Heat oil in the largest, oven-safe skillet you own (at least 12 inches) on the stove over medium-high heat. Pick up the fish by the tail and gently lower the fish into the skillet away from you to avoid hot oil splatters.",
+                    "As soon as the fish is in the skillet, use tongs or a fish spatula to lightly press the fish, encouraging the skin to make even contact with the skillet. Cook, continuing to press lightly, for 1 to 2 minutes. Remove the skillet from the heat and carefully place a few slices of citrus inside the cavity of the fish, letting a few escape and sizzle in the skillet alongside the fish.",
+                    "Add butter and soy sauce to the skillet, letting the butter sizzle and foam up. Tilt the skillet slightly toward you to allow the buttery soy sauce mixture to pool on one side. Using a large spoon, baste the fish a few times, letting the sauce sizzle and foam up around the fish and into the parts where you’ve made the incisions.",
+                    "Transfer the whole skillet to the oven and continue to cook until the fish is firm to the touch and you can see that the flesh has gone from translucent to white and opaque, 15 to 18 minutes. (You may need a few minutes more if you have an especially meaty snapper.)",
+                    "Place fish on a large serving platter (leaving the sauce behind), along with remaining halved lemon, lime and orange for squeezing over the top. Add lime juice to the skillet and swirl to combine. Pour sauce over fish and sprinkle with flaky sea salt, serving cilantro alongside for nibbling in between bites of fish, like a very spriggy salad.",
+                ],
+                image: "https://images.squarespace-cdn.com/content/v1/541b1515e4b0a990b33a796e/1611422068789-N8X046TL38OA0HZV7S7U/alison-roman-whole-fish-with-soy-and-citrus.jpg?format=2500w",
+            },
+            {
                 user: "Ana Liebert",
                 title: "Italian Wedding Soup",
                 category: "dinner",
