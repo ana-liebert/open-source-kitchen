@@ -12,7 +12,7 @@ app.use(express.static('public'));
 app.use(methodOverride('_method'));
 
 app.use('/recipeblog', controllers.recipe);
-app.use('/reviews', controllers.review);
+app.use('/', controllers.review);
 
 app.get('/', function (req, res) {
     res.send('This is working');
