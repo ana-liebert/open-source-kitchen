@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const reviewSchema = new mongoose.Schema({
         user: {
         type: String,
-        required: [true]
+        // required: [true]
         },
         title: {
             type: String,
-            required: [true],
+            // required: [true],
         },
         date: {
             type: Date,
@@ -18,11 +18,11 @@ const reviewSchema = new mongoose.Schema({
             type: Number,
             min: 1,
             max: 5,
-            required: [true, "You must provide a score"]
+            // required: [true, "You must provide a score"]
         },
         comment: {
             type: String,
-            required: [true],
+            // required: [true],
             //How do you limit length of comment?
         },
         recipe: {
