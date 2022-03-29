@@ -6,13 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+
+
+    <link rel="stylesheet" href="/styles/post.css" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-        </style>
+    </style>
 
-    <link rel="stylesheet" href="/styles/post.css" />
 
     <script src="/scripts/bulma.js" defer></script>
     <script src="/scripts/main.js" defer></script>
@@ -27,49 +30,33 @@
 
 <%- include ('./partials/nav.ejs') %>
 
-    <body class="form">
-        <h1>Fill out the fields to update this recipe</h1>
-        <div class="formContainer">
-
-        <form class="newRecipe" action="/recipeblog/<%= foundRecipe.title %>?_method=PUT" method="POST">
+    <body>
+        <h1>Contribute your own recipe to Open Source Kitchen!</h1>
+        <div class="formContainer"> 
+        <form class="newRecipe" action="/recipeblog/home" method="POST">
             <fieldset>
-                <legend></legend>
+                <legend>What are we cooking?</legend>
                 <div class="inputs">
                     <label class="label" for="text">Title</label>
-                    <input name="title" type="text" id="text" value="<%= foundRecipe.title %>">
+                    <input name="title" type="text" id="text" placeholder="Creamy Potato Leek Soup with Dill">
                 </div>
-                <input name="image" type="image" id="formImage" alt="Login" src="<%= foundRecipe.image %>">
                 <div class="inputs">
                     <label class="label" for="text">Image</label>
-                    <input name="image" type="text" id="text" value="<%= foundRecipe.image %>">
+                    <input name="image" type="text" id="text" placeholder="https://">
                 </div>
                 <div class="inputs">
                     <label class="label" for="text">Description</label>
                     <input name="description" type="text" id="text"
-                    value="<%= foundRecipe.description %>">
+                        placeholder="Whatever you do, don’t skip the dill. Nothing can replace the dill.">
                 </div>
                 <div class="inputs">
                     <label class="label" for="text">Author</label>
-                    <input name="user" type="text" id="text" value="<%= foundRecipe.user%>">
+                    <input name="user" type="text" id="text" placeholder="Najee Simmons">
                 </div>
                 <div class="inputs">
                     <label class="label" for="text">Ingredients</label>
-                    <input name="ingredients" type="text" id="formIngredients" value="
-                    <% for(let idx=0; idx < foundRecipe.ingredients.length; idx++){ %>
-
-                    <%= foundRecipe.ingredients[idx]%>
-                            <%}%> ">
+                    <textarea name="ingredients" type="text" id="ingredients" placeholder="2 Tablespoons Olive Oil" id="textarea-1"></textarea>
                 </div>
-                
-
-                
-                
-
-
-                <!-- <div class="inputs">
-                    <label class="label" for="text">Ingredients</label>
-                    <textarea name="ingredients" type="text" id="ingredients" value="can i have a value here?" id="textarea-1"></textarea>
-                </div> -->
                 <div class="inputs">
                     <label class="label" for="text">Preperation</label>
                     <textarea name="recipe" type="text" id="prep" placeholder="Heat the oven to 425 degrees" id="textarea-1"></textarea>
@@ -77,12 +64,14 @@
                 </div>
                 <div class="inputs">
                     <label class="label" for="text">Category</label>
-                    <input name="category" type="text" id="text" value="<%= foundRecipe.category%>">
+                    <input name="category" type="text" id="text" placeholder="breakfast">
                 </div>
                 <button type="submit">Submit</button>
             </fieldset>
         </form>
-</div>
+        </div>
+
     </body>
 
 </html>
+

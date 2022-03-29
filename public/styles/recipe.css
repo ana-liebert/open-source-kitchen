@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    /* background-image: url(https://www.gimmesomeoven.com/wp-content/themes/gimmesomeoven2019/images/bg.png); */
+}
+
+img {
+    max-block-size: 800px;
+}
+
+#title {
+font-size: 45px;
+margin: 20px;
+}
+
+.title, .description {
+    text-align: center;
+    color: rgb(255, 94, 0);
+}
+
+.container {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+    width: 1000px;
+    margin: 20px;
+    
+}
+
+#ingredients {
+    width: 250px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: start;
+    padding: 10px;
+    margin-left: 50px; 
+    
+    
+}
+
+#prep {
+    margin-left: 50px; 
+    width: 700px;  
+    
+}
+
+
+.reviewContainer, .seededReviewContainer {
+    margin: 25px;
+    border: solid 1px;
+    border-color: rgb(255, 94, 0);
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: start;
+    width: 600px;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+}
+
+.individualReviews {
+    margin: 25px;
+    border: solid 2px;
+    border-color: black;
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 515px;
+    display: block;
+}
+
+.reviewInput {
+    width: 500px;
+    height: 30px;
+    padding-right: 0px;
+    display: flex;
+    justify-content: stretch;
+    font-family: 'Poppins', sans-serif;
+}
+
+#ingredientsList {
+    list-style-type: circle;
+}
+
+#prepList {
+    list-style-type: none;
+    padding: 10px;
+}
+
+#steps {
+    margin-top: 2px;
+    margin: 20px;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    background-color: white;
+    width: 80px;
+    display: inline-block;
+    margin: 15px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+}

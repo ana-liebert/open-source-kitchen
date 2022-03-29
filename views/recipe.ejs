@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Poiret+One&display=swap');
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+        </style>
+
+    <link rel="stylesheet" href="../styles/recipe.css" />
+
+    <script src="/scripts/bulma.js" defer></script>
+    <script src="/scripts/main.js" defer></script>
+
+    <% if(typeof page !=='undefined' ) { %>
+        <title>Recipe Blog - <%= page %>
+        </title>
+        <% } else { %>
+            <title>Recipe Blog</title>
+            <% } %>
+</head>
+
+<%- include ('./partials/nav.ejs') %>
+
+    <body>
+
+        <h1 class="title" id="title">
+            <%= foundRecipe.title %>
+        </h1>
+        <img class="image" src="<%= foundRecipe.image %>" />
+        <span class="user">Created By <%= foundRecipe.user %></span>
+        <div class="description"><%= foundRecipe.description %></div>
+        <div class="container">
+            <div class="recipe" id="ingredients">
+                <h3 class="title">Ingredients:</h3>
+                <ul id="ingredientsList">
+                    <% for(let idx=0; idx < foundRecipe.ingredients.length; idx++){ %>
+                        <li>
+                            <%= foundRecipe.ingredients[idx]%>
+                        </li>
+                        <%}%>
+
+                </ul>
+
+            </div>
+            <div class="recipe" id="prep">
+                <h3 class="title">Preperation:</h3>
+                <ul id="prepList">
+                    <% for(let idx=0; idx < foundRecipe.recipe.length; idx++){ %>
+                        <li id="steps">
+                            <%= foundRecipe.recipe[idx]%>
+                        </li>
+                        <%}%>
+                </ul>
+            </div>
+        </div>
+
+        <div class="buttons">
+        <form action="/recipeblog/<%= foundRecipe.title%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
+        
+            <button><a href="/recipeblog/<%= foundRecipe.title%>/edit">Edit</a></button>
+        </div>
+
+        <div class="reviewContainer">
+            <form class="newRecipe" action="/recipeblog/<%= foundRecipe.title %>" method="POST">
+                <fieldset>
+                    <legend>Have you cooked this recipe? </legend>
+                    <span>Leave a review and let us know what you think!</span>
+                    <input type="hidden" name="recipe" value=" <%= foundRecipe._id %> ">
+                    <div><label for="text">User</label>
+                    <input name="user" class="reviewInput" type="text" id="text" placeholder="Your name">
+                    </div>
+                    <div>
+                    <label for="text">Headline</label>
+                    <input name="title" class="reviewInput" type="text" id="text">
+                    </div>
+                    <div>
+                        <label for="text">Rating</label>
+                        <input name="rating" class="reviewInput" type="number" id="number" placeholder="1-5">
+                    </div>
+                    <div>
+                        <label for="text">Comment</label>
+                        <input name="comment" class="reviewInput" type="text" id="text">
+                    </div>
+                    <input type="hidden" name="_id" value= <%= foundRecipe._id %> >
+                    <button class="submit" type="submit">Submit</button>
+                </fieldset>
+            </form>
+        </div>
+
+
+        
+        <h1>User Reviews</h1>
+        <div class="seededReviewContainer">
+            <% for (let i = 0; i < foundRecipe.review.length; i++) { %>
+                
+                
+            <div class="individualReviews">
+
+                <% if (foundRecipe.review.length < 1) { %>
+                    <% console.log(foundRecipe.review.length)%>
+                    <h3>No Reviews Yet.</h3> 
+                    <% }  else { %>
+            <div>
+                Rating: <%= foundRecipe.review[i].rating %>
+            </div>
+            <div>
+                User: <%= foundRecipe.review[i].user %>
+            </div>
+            <div>
+                Headline: <%= foundRecipe.review[i].title %>
+            </div>
+            <div>
+                Comment: <%= foundRecipe.review[i].comment %>
+            </div>
+            </div>
+            <% } %>
+
+            <% } %> 
+        </div>
+
+    </body>
+
+</html>

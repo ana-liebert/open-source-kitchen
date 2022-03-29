@@ -1,0 +1,67 @@
+body{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    /* background-image: url(https://www.gimmesomeoven.com/wp-content/themes/gimmesomeoven2019/images/bg.png); */
+}
+
+h1 {
+    margin: 20px;
+    text-align: center;
+    font-size: 40px;
+}
+
+.formContainer {
+    margin-left: 85px;
+    margin-right: 85px;
+    border: solid;
+    border-color: rgb(255, 94, 0);
+    padding: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+}
+
+.inputs {
+    display: flex;
+    justify-content: end;
+    padding: 15px;
+}
+
+input, #ingredients, #prep {
+    width: 100%;
+    justify-content: right;
+    font-family: 'Poppins', sans-serif;
+    border: 1.5px solid rgb(247, 227, 216);
+}
+
+#ingredients, #prep {
+    height: 100px;
+}
+
+.label {
+    display: flex;
+    justify-content: start;
+    width: 15%;
+}
+
+#formImage {
+    max-width: 60%;
+    max-height: 60%;
+    text-align: right;
+
+}
+
+#formIngredients {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 10px;
+}
+
+button {
+    margin: 15px;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    background-color: white;
+    width: 100px;
+}
