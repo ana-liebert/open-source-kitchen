@@ -69,14 +69,14 @@
         </form>
         
             <button><a href="/recipeblog/<%= foundRecipe.title%>/edit">Edit</a></button>
-            <button><a href="/<%= foundRecipe.title%>">Leave a Review</a></button>
         </div>
 
         <div class="reviewContainer">
-            <form class="newRecipe" action="/recipeblog/<%= foundRecipe %>" method="POST">
+            <form class="newRecipe" action="/recipeblog/<%= foundRecipe.title %>" method="POST">
                 <fieldset>
                     <legend>Have you cooked this recipe? </legend>
                     <span>Leave a review and let us know what you think!</span>
+                    <input type="hidden" name="recipe" value=" <%= foundRecipe._id %> ">
                     <div><label for="text">User</label>
                     <input name="user" class="reviewInput" type="text" id="text" placeholder="Your name">
                     </div>
@@ -92,26 +92,41 @@
                         <label for="text">Comment</label>
                         <input name="comment" class="reviewInput" type="text" id="text">
                     </div>
+                    <input type="hidden" name="_id" value= <%= foundRecipe._id %> >
                     <button class="submit" type="submit">Submit</button>
                 </fieldset>
             </form>
         </div>
 
 
+        
+        <h1>User Reviews</h1>
         <div class="seededReviewContainer">
-            <h1>User Reviews</h1>
+            <% for (let i = 0; i < foundRecipe.review.length; i++) { %>
+                
+                
+            <div class="individualReviews">
+
+                <% if (foundRecipe.review.length < 1) { %>
+                    <% console.log(foundRecipe.review.length)%>
+                    <h3>No Reviews Yet.</h3> 
+                    <% }  else { %>
             <div>
-                Rating: 5
+                Rating: <%= foundRecipe.review[i].rating %>
             </div>
             <div>
-                User: Alan McGurney
+                User: <%= foundRecipe.review[i].user %>
             </div>
             <div>
-                Headline: This absolutey rocked.
+                Headline: <%= foundRecipe.review[i].title %>
             </div>
             <div>
-                Comment: Made this for my girlfriend and she loved it. Will become a regular in rotation. 
+                Comment: <%= foundRecipe.review[i].comment %>
             </div>
+            </div>
+            <% } %>
+
+            <% } %> 
         </div>
 
     </body>

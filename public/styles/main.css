@@ -1,6 +1,13 @@
+h1 {
+    font-size: 60px;
+    color: rgb(255, 94, 0);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
 body {
     font-family: 'Poppins', sans-serif;
-    background-image: url(https://www.gimmesomeoven.com/wp-content/themes/gimmesomeoven2019/images/bg.png);
+    /* background-image: url(https://www.gimmesomeoven.com/wp-content/themes/gimmesomeoven2019/images/bg.png); */
     /* padding: 5rem; */
 }
 
@@ -23,6 +30,7 @@ img {
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    width: 900px;
 }
 
 .category-images {
@@ -30,7 +38,7 @@ img {
 }
 
 .hero-body {
-    background-image: url(https://media.gettyimages.com/photos/spices-on-grey-background-picture-id1176564636?k=20&m=1176564636&s=612x612&w=0&h=5G9-Hf1nAK2Sm4RFMD6OlRyuuzBFYyLoFXNxnpCV57s=);
+    /* background-image: url(https://media.gettyimages.com/photos/spices-on-grey-background-picture-id1176564636?k=20&m=1176564636&s=612x612&w=0&h=5G9-Hf1nAK2Sm4RFMD6OlRyuuzBFYyLoFXNxnpCV57s=); */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -38,7 +46,7 @@ img {
 .home-images, .category-images {
     display: flex;
     justify-content: center;
-    background-image: url(https://images.unsplash.com/photo-1601645055521-8a63c986f411?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cnVzdGljJTIwY2hyaXN0bWFzfGVufDB8fDB8fA%3D%3D&w=1000&q=80);
+    /* background-image: url(https://images.unsplash.com/photo-1601645055521-8a63c986f411?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cnVzdGljJTIwY2hyaXN0bWFzfGVufDB8fDB8fA%3D%3D&w=1000&q=80); */
 }
 
 .recipe-description {
@@ -55,7 +63,7 @@ img {
 }
 
 .recipe-title h2 {
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 1px;
     color: rgb(255, 94, 0);
 }

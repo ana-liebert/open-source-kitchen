@@ -1,4 +1,5 @@
 const express = require('express');
+const { Recipe } = require('../models');
 const router = express.Router();
 const db = require('../models')
 
@@ -9,7 +10,8 @@ router.get('/home', async (req, res, next) => {
     
     try {
         const recipes = await db.Recipe.find({});
-        const context = { recipes }
+        const reviews = await db.Review.find({});
+        const context = { recipes , reviews}
         return res.render('home.ejs', context);
     } catch (error) {
         console.log(error);
@@ -70,11 +72,13 @@ router.get('/allrecipes/:category', async (req, res, next) => {
 router.get('/:recipeTitle', async (req, res, next) => {
     try {
         const title = req.params.recipeTitle
-        const foundRecipe = await db.Recipe.findOne({title})
-        console.log([req.params.recipeTitle])
+        const foundRecipe = await db.Recipe.findOne({title}).populate('review')
+  
         console.log(foundRecipe);
-        const allReviews = await db.Review.find({})
-        const context = { foundRecipe, allReviews }
+        const reviews = await db.Review.find({})
+
+
+        const context = { foundRecipe, reviews}
         console.log('========================================')
         // console.log(`THIS IS THE CONTEXT OF RECIPE PAGE ${context}`);
         console.log('========================================')
@@ -85,6 +89,26 @@ router.get('/:recipeTitle', async (req, res, next) => {
         return next();
     }
 });
+
+
+router.post('/:recipeTitle', async (req, res, next) => {
+
+    try {
+        const review = await db.Review.create( {rating: req.body.rating, user: req.body.user, title: req.body.title, comment: req.body.comment});
+        await review.save();
+
+        await Recipe.findOneAndUpdate({ _id: req.body._id}, {$push: {review}});
+
+        title = req.params.recipeTitle
+        res.redirect("/recipeblog/" + title);
+        
+    } catch(error) {
+        console.log(error);
+        req.error = error;
+        return next();
+    }
+})
+
 
 // ^ this route will catch GET requests to /recipeblog/:recipeTitle/ and respond with a single recipe
 //------------------------------------------------------------------
