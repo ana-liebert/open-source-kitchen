@@ -32,46 +32,47 @@
 
     <body>
         <h1>Contribute your own recipe to Open Source Kitchen!</h1>
-        <div class="formContainer"> 
-        <form class="newRecipe" action="/recipeblog/home" method="POST">
-            <fieldset>
-                <legend>What are we cooking?</legend>
-                <div class="inputs">
-                    <label class="label" for="text">Title</label>
-                    <input name="title" type="text" id="text" placeholder="Creamy Potato Leek Soup with Dill">
-                </div>
-                <div class="inputs">
-                    <label class="label" for="text">Image</label>
-                    <input name="image" type="text" id="text" placeholder="https://">
-                </div>
-                <div class="inputs">
-                    <label class="label" for="text">Description</label>
-                    <input name="description" type="text" id="text"
-                        placeholder="Whatever you do, don’t skip the dill. Nothing can replace the dill.">
-                </div>
-                <div class="inputs">
-                    <label class="label" for="text">Author</label>
-                    <input name="user" type="text" id="text" placeholder="Najee Simmons">
-                </div>
-                <div class="inputs">
-                    <label class="label" for="text">Ingredients</label>
-                    <textarea name="ingredients" type="text" id="ingredients" placeholder="2 Tablespoons Olive Oil" id="textarea-1"></textarea>
-                </div>
-                <div class="inputs">
-                    <label class="label" for="text">Preperation</label>
-                    <textarea name="recipe" type="text" id="prep" placeholder="Heat the oven to 425 degrees" id="textarea-1"></textarea>
-                    
-                </div>
-                <div class="inputs">
-                    <label class="label" for="text">Category</label>
-                    <input name="category" type="text" id="text" placeholder="breakfast">
-                </div>
-                <button type="submit">Submit</button>
-            </fieldset>
-        </form>
+        <div class="formContainer">
+            <form class="newRecipe" action="/recipeblog/home" method="POST">
+                <fieldset>
+                    <legend>What are we cooking?</legend>
+                    <div class="inputs">
+                        <label class="label" for="text">Title</label>
+                        <input name="title" type="text" id="text" placeholder="Creamy Potato Leek Soup with Dill">
+                    </div>
+                    <div class="inputs">
+                        <label class="label" for="text">Image</label>
+                        <input name="image" type="text" id="text" placeholder="https://">
+                    </div>
+                    <div class="inputs">
+                        <label class="label" for="text">Description</label>
+                        <input name="description" type="text" id="text"
+                            placeholder="Whatever you do, don’t skip the dill. Nothing can replace the dill.">
+                    </div>
+                    <div class="inputs">
+                        <label class="label" for="text">Author</label>
+                        <input name="user" type="text" id="text" placeholder="Najee Simmons">
+                    </div>
+                    <div class="inputs">
+                        <label class="label" for="text">Ingredients</label>
+                        <textarea name="ingredients" type="text" id="ingredients" placeholder="2 Tablespoons Olive Oil"
+                            id="textarea-1"></textarea>
+                    </div>
+                    <div class="inputs">
+                        <label class="label" for="text">Preperation</label>
+                        <textarea name="recipe" type="text" id="prep" placeholder="Heat the oven to 425 degrees"
+                            id="textarea-1"></textarea>
+
+                    </div>
+                    <div class="inputs">
+                        <label class="label" for="text">Category</label>
+                        <input name="category" type="text" id="text" placeholder="breakfast">
+                    </div>
+                    <button type="submit">Submit</button>
+                </fieldset>
+            </form>
         </div>
 
     </body>
 
 </html>
-
