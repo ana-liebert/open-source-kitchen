@@ -7,4 +7,4 @@
 * Express
 * MongoDB
 
-* Checkout the live site: https://salty-tundra-68910.herokuapp.com/recipeblog/home
+* Checkout the live site: https://opensourcekitchen.herokuapp.com/recipeblog/home
