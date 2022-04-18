@@ -46,22 +46,29 @@ img {
     background-size: cover;
 }
 
+.columns {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
 .card-content {
     display: flex;
     justify-content: center;
-    width: 1000px;
+    margin: 20px;
 }
 
 .home-images, .category-images {
-    text-align: center;
     object-fit: cover;
     height: 450px;
     width: 750px;
+    display: flex;
+    justify-content: center;
 }
 
 .recipe-description {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     font-style: oblique;
 }
 
@@ -71,7 +78,7 @@ img {
     margin-top: 3rem;
     color: rgb(255, 94, 0);
     display: flex;
-    justify-content: start;
+    justify-content: center;
 }
 
 .recipe-title h2 {
