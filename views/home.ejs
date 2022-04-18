@@ -9,29 +9,16 @@
             <div>
 
                 <h1>The Open Source Kitchen</h1>
+                <h3>Welcome! View the latest recipes:</h3>
             </div>
             <main class="container is-max-widescreen">
                 <div class="columns">
                     <% for(let idx=0; idx < recipes.length; idx++){ %>
 
-
-                        <div class="column is-four-quarters">
-
-                            <article class="card">
-                                <section class="card-image">
-                                    <figure class="image is-3by3">
-                                    </figure>
-                        </div>
-                        </section>
                         <div class="card-content">
-                            <div class="content is-inline-block">
-
-                                <div class="home-images">
-                                    <img src="<%= recipes[idx].image %>" />
-                                </div>
-
-                                <div class="recipe-description">
-                                    <%= recipes[idx].description %>
+                            <div class="content">
+                                <div>
+                                    <img class="home-images" src="<%= recipes[idx].image %>" />
                                 </div>
 
                                 <a href="/recipeblog/<%= recipes[idx].title %>">
@@ -41,12 +28,11 @@
                                         </h2>
                                     </div>
                                 </a>
-                                <div class="recipe-ingredients">
-                                    <%= recipes[idx].ingredients %>
+                                <div class="recipe-description">
+                                    <%= recipes[idx].description %>
                                 </div>
                             </div>
                         </div>
-                        </article>
                 </div>
                 <% } %>
                     </div>

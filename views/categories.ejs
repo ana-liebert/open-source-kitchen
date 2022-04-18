@@ -1,60 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include ('./partials/head.ejs', {page: 'Recipe Blog' }) %>
+    <%- include ('./partials/head.ejs', {page: 'Recipe Blog' }) %>
 
     <%- include ('./partials/nav.ejs') %>
 
-        <body>
+            <h1>
+                <%= category %>
+            </h1>
+            <main class="container is-max-widescreen">
+                <div class="columns is-multiline p-5">
+                    <% for(let idx=0; idx < foundCategory.length; idx++){ %>
 
-            <body class="has-navbar-fixed-top">
-                <section class="hero is-small has-background-light">
-                    <div class="hero-body">
-                        <div class="title">Recipe Blog</div>
-                    </div>
-                </section>
-                <main class="container is-max-widescreen">
-                    <div class="columns is-multiline p-5">
-                        <% for(let idx=0; idx < foundCategory.length; idx++){ %>
+                        <div class="column is-three-quarters">
 
-
-                            <div class="column is-three-quarters">
-
-                                <article class="category-card">
-                                    <section class="card-image">
-                                        <figure class="image is-3by3">
-                                        </figure>
-                            </div>
-                            </section>
-                            <div class="category-card">
-                                <div class="content is-inline-block">
-
-                                    <div class="category-images">
-                                        <img src="<%= foundCategory[idx].image %>" />
-                                    </div>
-
-                                    <div class="recipe-description">
-                                        <%= foundCategory[idx].description %>
-                                    </div>
-
-                                    <a href="/recipeblog/<%= foundCategory[idx].title %>">
-                                        <div class=recipe-title>
-
-                                            <h2>
-                                                <%= foundCategory[idx].title %>
-                                            </h2>
-
-                                        </div>
-                                    </a>
-
-                                </div>
-                            </div>
-                            </article>
-                    </div>
-                    <% } %>
+                            <article class="category-card">
+                                <section class="card-image">
+                                    <figure class="image is-3by3">
+                                    </figure>
                         </div>
-                </main>
-            </body>
+                        </section>
+                        <div class="category-card">
+                            <div class="content is-inline-block">
+
+                                <div>
+                                    <img class="category-images" src="<%= foundCategory[idx].image %>" />
+                                </div>
+
+
+                                <a href="/recipeblog/<%= foundCategory[idx].title %>">
+                                    <div class=recipe-title>
+
+                                        <h2>
+                                            <%= foundCategory[idx].title %>
+                                        </h2>
+
+                                    </div>
+                                </a>
+
+                                <div class="recipe-description">
+                                    <%= foundCategory[idx].description %>
+                                </div>
+
+                            </div>
+                        </div>
+                        </article>
+                </div>
+                <% } %>
+                    </div>
+            </main>
 
         </body>
 

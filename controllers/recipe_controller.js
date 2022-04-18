@@ -44,7 +44,7 @@ router.get('/allrecipes/:category', async (req, res, next) => {
         const category = req.params.category
         const foundCategory = await db.Recipe.find({category})
 
-        const context = { foundCategory }
+        const context = { foundCategory , category }
         res.render('categories.ejs', context)
     } catch (error) {
         console.log(error);
