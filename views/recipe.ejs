@@ -13,7 +13,7 @@
     </style>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
-        </style>
+    </style>
 
     <link rel="stylesheet" href="../styles/recipe.css" />
 
@@ -37,7 +37,9 @@
         </h1>
         <img class="image" src="<%= foundRecipe.image %>" />
         <span class="user">Created By <%= foundRecipe.user %></span>
-        <div class="description"><%= foundRecipe.description %></div>
+        <div class="description">
+            <%= foundRecipe.description %>
+        </div>
         <div class="container">
             <div class="recipe" id="ingredients">
                 <h3 class="title">Ingredients:</h3>
@@ -64,10 +66,10 @@
         </div>
 
         <div class="buttons">
-        <form action="/recipeblog/<%= foundRecipe.title%>?_method=DELETE" method="POST">
-            <button>Delete</button>
-        </form>
-        
+            <form action="/recipeblog/<%= foundRecipe.title%>?_method=DELETE" method="POST">
+                <button>Delete</button>
+            </form>
+
             <button><a href="/recipeblog/<%= foundRecipe.title%>/edit">Edit</a></button>
         </div>
 
@@ -78,11 +80,11 @@
                     <span>Leave a review and let us know what you think!</span>
                     <input type="hidden" name="recipe" value=" <%= foundRecipe._id %> ">
                     <div><label for="text">User</label>
-                    <input name="user" class="reviewInput" type="text" id="text" placeholder="Your name">
+                        <input name="user" class="reviewInput" type="text" id="text" placeholder="Your name">
                     </div>
                     <div>
-                    <label for="text">Headline</label>
-                    <input name="title" class="reviewInput" type="text" id="text">
+                        <label for="text">Headline</label>
+                        <input name="title" class="reviewInput" type="text" id="text">
                     </div>
                     <div>
                         <label for="text">Rating</label>
@@ -92,41 +94,41 @@
                         <label for="text">Comment</label>
                         <input name="comment" class="reviewInput" type="text" id="text">
                     </div>
-                    <input type="hidden" name="_id" value= <%= foundRecipe._id %> >
+                    <input type="hidden" name="_id" value=<%=foundRecipe._id %> >
                     <button class="submit" type="submit">Submit</button>
                 </fieldset>
             </form>
         </div>
 
 
-        
+
         <h1>User Reviews</h1>
         <div class="seededReviewContainer">
-            <% for (let i = 0; i < foundRecipe.review.length; i++) { %>
-                
-                
-            <div class="individualReviews">
+            <% for (let i=0; i < foundRecipe.review.length; i++) { %>
 
-                <% if (foundRecipe.review.length < 1) { %>
-                    <% console.log(foundRecipe.review.length)%>
-                    <h3>No Reviews Yet.</h3> 
-                    <% }  else { %>
-            <div>
-                Rating: <%= foundRecipe.review[i].rating %>
-            </div>
-            <div>
-                User: <%= foundRecipe.review[i].user %>
-            </div>
-            <div>
-                Headline: <%= foundRecipe.review[i].title %>
-            </div>
-            <div>
-                Comment: <%= foundRecipe.review[i].comment %>
-            </div>
-            </div>
-            <% } %>
 
-            <% } %> 
+                <div class="individualReviews">
+
+                    <% if (foundRecipe.review.length < 1) { %>
+                        <% console.log(foundRecipe.review.length)%>
+                            <h3>No Reviews Yet.</h3>
+                            <% } else { %>
+                                <div>
+                                    Rating: <%= foundRecipe.review[i].rating %>
+                                </div>
+                                <div>
+                                    User: <%= foundRecipe.review[i].user %>
+                                </div>
+                                <div>
+                                    Headline: <%= foundRecipe.review[i].title %>
+                                </div>
+                                <div>
+                                    Comment: <%= foundRecipe.review[i].comment %>
+                                </div>
+                </div>
+                <% } %>
+
+                    <% } %>
         </div>
 
     </body>

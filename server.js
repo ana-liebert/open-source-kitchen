@@ -14,9 +14,6 @@ app.use(methodOverride('_method'));
 app.use('/recipeblog', controllers.recipe);
 app.use('/', controllers.review);
 
-// app.get('/', function (req, res) {
-//     res.send('This is working');
-// })
 
 app.get("/*", (req, res) => {
     const context = { error: req.error };
